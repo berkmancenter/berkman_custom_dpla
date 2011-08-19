@@ -1,0 +1,12 @@
+/*
+Theme Name: Digital Public Library of America
+Description: Custom theme for the Digital Public Library of America
+Author: jclark
+Template: egesto
+*/
+
+@import url("../egesto/style.css");
+@import url("../egesto/slider.css");
+@import url("../egesto/pagenavi.css");
+@import url("../egesto/mainmenu.css");
+
