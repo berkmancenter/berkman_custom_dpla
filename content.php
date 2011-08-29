@@ -10,28 +10,34 @@
                 /* translators: used between list items, there is a space after the comma */
                 $tag_list = get_the_tag_list( '', __( ', ', 'twentyeleven' ) );
                 if ( '' != $tag_list ) {
-                    $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyeleven' );
+                    $utility_text = __( 'Posted by <a href="%6$s">%5$s</a> on %7$s in %1$s and tagged %2$s.', 'twentyeleven' );
                 } elseif ( '' != $categories_list ) {
-                    $utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyeleven' );
+                    $utility_text = __( 'Posted by <a href="%6$s">%5$s</a> on %7$s in %1$s.', 'twentyeleven' );
                 } else {
-                    $utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyeleven' );
+                    $utility_text = __( 'Posted by <a href="%6$s">%5$s</a> on %7$s', 'twentyeleven' );
                 }
 
-                printf(
-                    $utility_text,
-                    $categories_list,
-                    $tag_list,
-                    esc_url( get_permalink() ),
-                    the_title_attribute( 'echo=0' ),
-                    get_the_author(),
-                    esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
-                );
-            ?>
+                if (!in_array(get_post_type( get_the_ID() ), array('page', 'category-page'))): ?>
+                <div class="tagline">
+                <?php 
+                    printf(
+                        $utility_text,
+                        $categories_list,
+                        $tag_list,
+                        esc_url( get_permalink() ),
+                        the_title_attribute( 'echo=0' ),
+                        get_the_author(),
+                        esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+                        get_the_date()
+                    );
+                ?>
+                </div>
+            <?php endif; ?>
             <?php $subtitle = get_post_meta($post->ID, 'subtitle', true); if ($subtitle) { ?><div id="subt"> <?php echo $subtitle; ?> </div> <?php } ?>
             <?php the_content('read more'); ?>
 
             <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-            <?php comments_template(); ?>
+            <?php if (!in_array(get_post_type( get_the_ID() ), array('page', 'category-page'))) { comments_template(); } ?>
         </div>
     </div>
 <?php endwhile; else: ?>
