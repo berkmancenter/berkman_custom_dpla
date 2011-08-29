@@ -19,8 +19,9 @@ function create_entry_post_type() {
         )
 	);
 }
-function add_categories_to_pages() {
+function modify_pages() {
     register_taxonomy_for_object_type('category', 'page'); 
+    add_post_type_support('page', 'excerpt');
 }
 function create_calendar_iframe($attributes) {
 	extract( shortcode_atts( array(
@@ -41,7 +42,7 @@ function create_calendar_iframe($attributes) {
 }
 
 add_action( 'init', 'create_entry_post_type' );
-add_action( 'init', 'add_categories_to_pages' );
+add_action( 'init', 'modify_pages' );
 add_shortcode( 'google-calendar', 'create_calendar_iframe' );
 add_filter('widget_text', 'do_shortcode');
 ?>
