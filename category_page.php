@@ -2,6 +2,7 @@
 /*
  * Template Name: Category Page
  */
+$page_id = get_the_ID();
 ?>
 <?php get_header(); ?>
 <div id="contentwrapper" class="<?php the_category_unlinked(); ?>">
@@ -20,7 +21,7 @@
         $posts = get_posts($args);
         ?>
         <?php get_template_part('blog_list'); ?>
-        <?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+        <?php edit_post_link('Edit this entry.', '<p>', '</p>', $page_id); ?>
 	</div>
 	<?php get_sidebar(); ?>
 </div>
