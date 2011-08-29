@@ -2,7 +2,7 @@
     <div class="post" id="post-<?php the_ID(); ?>">
         <div class="entry">
             <?php if ( has_post_thumbnail() )the_post_thumbnail(array( 650,999 ),  array( 'alt' => get_the_title(), 'title' => get_the_title(), 'class' => 'singlethumb' )); ?>
-            <h1 class="entry-title"><?php the_title(); ?></h1>
+            <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
             <?php
                 /* translators: used between list items, there is a space after the comma */
                 $categories_list = get_the_category_list( __( ', ', 'twentyeleven' ) );

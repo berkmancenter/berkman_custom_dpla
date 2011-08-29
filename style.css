@@ -10,3 +10,7 @@ Template: egesto
 @import url("../egesto/pagenavi.css");
 @import url("../egesto/mainmenu.css");
 
+h1.entry-title a {
+    color: #333;
+    text-decoration: none;
+}
