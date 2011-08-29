@@ -14,3 +14,15 @@ h1.entry-title a {
     color: #333;
     text-decoration: none;
 }
+
+.tagline {
+    margin: 0 0 20px 5px;
+}
+
+.mainnav ul li, .mainnav li:hover ul, ul.mainnav li.sfHover ul {
+    width: 180px;
+}
+
+.mainnav li li:hover ul, ul.mainnav li li.sfHover ul {
+    left: 180px;
+}
