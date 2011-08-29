@@ -26,3 +26,7 @@ h1.entry-title a {
 .mainnav li li:hover ul, ul.mainnav li li.sfHover ul {
     left: 180px;
 }
+
+#searchform {
+    float: none;
+}
