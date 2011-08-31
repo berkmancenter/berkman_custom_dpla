@@ -30,3 +30,15 @@ h1.entry-title a {
 #searchform {
     float: none;
 }
+
+.post ul {
+    padding-left: 35px;
+}
+
+#mainmenu {
+    width: 550px;
+}
+
+#logo {
+    width: 350px;
+}
