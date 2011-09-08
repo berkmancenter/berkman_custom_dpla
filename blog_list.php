@@ -3,7 +3,7 @@
 				<div class="entry">
                 	<?php if ( has_post_thumbnail() )the_post_thumbnail(array( 125,125 ),  array( 'alt' => get_the_title(), 'title' => get_the_title(), 'class' => 'thumby' )); ?>
                 	<h2 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-                    <?php $subtitle = get_post_meta($post->ID, 'subtitle', true); if ($subtitle) { ?><div id="subt"> <?php echo $subtitle; ?> </div> <?php } ?>
+                    <?php $subtitle = get_post_meta($post->ID, 'subtitle', true); if ($subtitle) { ?><div id="subt"> <?php echo htmlentities($subtitle, ENT_QUOTES); ?> </div> <?php } ?>
 					<?php the_excerpt() ?>
 				</div>
                 <a class="more-link" href="<?php the_permalink() ?>" >&raquo;</a>				

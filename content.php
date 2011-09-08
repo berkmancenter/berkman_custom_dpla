@@ -33,7 +33,7 @@
                 ?>
                 </div>
             <?php endif; ?>
-            <?php $subtitle = get_post_meta($post->ID, 'subtitle', true); if ($subtitle) { ?><div id="subt"> <?php echo $subtitle; ?> </div> <?php } ?>
+            <?php $subtitle = get_post_meta($post->ID, 'subtitle', true); if ($subtitle) { ?><div id="subt"> <?php echo htmlentities($subtitle, ENT_QUOTES); ?> </div> <?php } ?>
             <?php the_content('read more'); ?>
 
             <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
