@@ -14,13 +14,15 @@ function create_entry_post_type() {
                 'editor',
                 'author',
                 'thumbnail',
-                'excerpt'
+                'excerpt',
+                'comments'
             )
         )
 	);
 }
 function modify_pages() {
     register_taxonomy_for_object_type('category', 'page'); 
+    register_taxonomy_for_object_type('category', 'beta_sprint_entry'); 
     add_post_type_support('page', 'excerpt');
 }
 function create_calendar_iframe($attributes) {
