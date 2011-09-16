@@ -9,7 +9,9 @@
 
                 /* translators: used between list items, there is a space after the comma */
                 $tag_list = get_the_tag_list( '', __( ', ', 'twentyeleven' ) );
-                if ( '' != $tag_list ) {
+                if ( get_post_type( get_the_ID() ) == 'beta_sprint_entry' && '' != $categories_list ) {
+                    $utility_text = __( '%1$s', 'twentyeleven' );
+                } elseif ( '' != $tag_list ) {
                     $utility_text = __( 'Posted by <a href="%6$s">%5$s</a> on %7$s in %1$s and tagged %2$s.', 'twentyeleven' );
                 } elseif ( '' != $categories_list ) {
                     $utility_text = __( 'Posted by <a href="%6$s">%5$s</a> on %7$s in %1$s.', 'twentyeleven' );
