@@ -8,9 +8,6 @@ if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } e
 ?>	
 	<?php include (TEMPLATEPATH . '/bottombar.php'); ?>
 	<div id="footerbottom">
-    	<div id="copyinfo">
-            &copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?>
-    	</div>
         <div id="socialize">
         	<?php if ($eg_twitter_disable == "No") { ?>
         	<a href="<?php echo $eg_twitter_url;?>"><img src="<?php bloginfo('template_url'); ?>/images/twitter.png" alt="Follow us on Twitter" /></a>

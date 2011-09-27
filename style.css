@@ -36,9 +36,22 @@ h1.entry-title a {
 }
 
 #mainmenu {
+    margin-top: 60px;
     width: 550px;
 }
 
 #logo {
     width: 350px;
+}
+
+#bottombar .widgets {
+    font-style: normal;
+}
+
+#socialize {
+    margin: 10px 0;
+}
+
+#berkman-footer-links {
+    display: none;
 }
