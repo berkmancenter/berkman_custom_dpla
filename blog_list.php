@@ -5,6 +5,9 @@
                 	<h2 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                     <?php $subtitle = get_post_meta($post->ID, 'subtitle', true); if ($subtitle) { ?><div id="subt"> <?php echo wp_kses($subtitle, array('br' => array())); ?> </div> <?php } ?>
 					<?php the_excerpt() ?>
+                <?php if ( has_post_thumbnail() ): ?>
+                    <div style="clear: both"></div>
+                <?php endif; ?>
 				</div>
                 <a class="more-link" href="<?php the_permalink() ?>" >&raquo;</a>				
 		</div>
