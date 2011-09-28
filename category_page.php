@@ -9,7 +9,8 @@ $page_id = get_the_ID();
 	<div id="content">
         <?php get_template_part('content'); ?>
         <?php 
-        $args = array();
+        rewind_posts();
+        $args = array('paged' => get_query_var('paged'));
         $master_categories = get_post_custom_values('master_category'); 
         $master_category = $master_categories[0];
         if ($master_category)
@@ -18,7 +19,7 @@ $page_id = get_the_ID();
         $post_type = $post_types[0];
         if ($post_type)
             $args['post_type'] = $post_type;
-        $posts = get_posts($args);
+        query_posts($args);
         ?>
         <?php get_template_part('blog_list'); ?>
         <?php edit_post_link('Edit this entry.', '<p>', '</p>', $page_id); ?>
