@@ -47,10 +47,10 @@ function dpla_iframe( $atts ){
         extract( shortcode_atts( array(
                 'width' => '250',
                 'height' => '156',
-                'url' => ''
+                'src' => ''
                 ), $atts ) 
         );
-        $output = '<iframe src=" ' . esc_attr($url) . '" allowfullscreen="" width="'. esc_attr($width) . '" frameborder="0" height="' . esc_attr($height) . '" ></iframe>';
+        $output = '<iframe src=" ' . esc_attr($src) . '" allowfullscreen="" width="'. esc_attr($width) . '" frameborder="0" height="' . esc_attr($height) . '" ></iframe>';
         return $output;
 }
 
