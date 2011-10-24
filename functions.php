@@ -43,6 +43,19 @@ function create_calendar_iframe($attributes) {
 	return $src;
 }
 
+function dpla_iframe( $atts ){
+        extract( shortcode_atts( array(
+                'width' => '250',
+                'height' => '156',
+                'url' => ''
+                ), $atts ) 
+        );
+        $output = '<iframe src=" ' . esc_attr($url) . '" allowfullscreen="" width="'. esc_attr($width) . '" frameborder="0" height="' . esc_attr($height) . '" ></iframe>';
+        return $output;
+}
+
+add_shortcode( 'dplaiframe', 'dpla_iframe' );
+
 add_action( 'init', 'create_entry_post_type' );
 add_action( 'init', 'modify_pages' );
 add_shortcode( 'google-calendar', 'create_calendar_iframe' );
