@@ -98,3 +98,10 @@ a.more-link {
 .entry {
     min-height: 0; 
 }
+
+h3.entry-date {
+    padding-top: 0;
+    color: #AAA !important;
+    font-size: 0.9em;
+    margin-top: -5px;
+}
