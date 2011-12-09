@@ -54,7 +54,46 @@ function dpla_iframe( $atts ){
         return $output;
 }
 
+function dpla_twitter_hashtag_embed( $atts ){
+        extract( shortcode_atts( array(
+                'width' => '500',
+                'height' => '600'
+                ), $atts ) 
+    $output = "<script src='http://widgets.twimg.com/j/2/widget.js'></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#dpla',
+  interval: 30000,
+  title: 'Digital Public Library of America',
+  subject: '#dpla',
+  width: ' . esc_attr($width) . ',
+  height: ' . esc_attr($height) . ',
+  theme: {
+    shell: {
+      background: '#8ec1da',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>";
+return $output;
+}
+
 add_shortcode( 'dplaiframe', 'dpla_iframe' );
+add_shortcode( 'dplatwitterhashtag', 'dpla_twitter_hashtag_embed' );
 
 add_action( 'init', 'create_entry_post_type' );
 add_action( 'init', 'modify_pages' );
