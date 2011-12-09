@@ -55,17 +55,19 @@ function dpla_iframe( $atts ){
 }
 
 function dpla_twitter_hashtag_embed( $atts ){
-        extract( shortcode_atts( array(
-                'width' => '500',
-                'height' => '600'
-                ), $atts ) 
+    extract( shortcode_atts( array(
+            'width' => '500',
+            'height' => '600'
+            ), $atts )
+    );
+
     $output = "<script src='http://widgets.twimg.com/j/2/widget.js'></script>
 <script>
 new TWTR.Widget({
   version: 2,
   type: 'search',
   search: '#dpla',
-  interval: 30000,
+  interval: 8000,
   title: 'Digital Public Library of America',
   subject: '#dpla',
   width: ' . esc_attr($width) . ',
