@@ -37,7 +37,7 @@
 
 		<?php endwhile; ?>
 
-		<?php include('wp-pagenavi.php'); if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+        <?php include(TEMPLATEPATH . '/../egesto/wp-pagenavi.php'); if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 
 	<?php else : ?>
 
