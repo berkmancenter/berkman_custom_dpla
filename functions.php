@@ -94,6 +94,14 @@ new TWTR.Widget({
 return $output;
 }
 
+function storify_shortcode( $atts ){
+    extract( shortcode_atts( array(
+        'user' => 'digpublib',
+        'story' => 'dpla-midwest'
+    ), $atts ));
+    return '<script src="http://storify.com/' . esc_attr($user) . '/' . esc_attr($story) . '.js"></script><noscript>[<a href="//storify.com/' . esc_attr($user) . '/' . esc_attr($story) .'" target="_blank">View the story on Storify</a>]</noscript>';
+}
+add_shortcode( 'storify', 'storify_shortcode' );
 add_shortcode( 'dplaiframe', 'dpla_iframe' );
 add_shortcode( 'dplatwitterhashtag', 'dpla_twitter_hashtag_embed' );
 
